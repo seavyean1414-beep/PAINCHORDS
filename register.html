@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAIN CHORDS - Register</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+              "background-dark": "#191919",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="flex flex-col min-h-screen">
+<header class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-black dark:text-white">PAIN CHORDS</h1>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Noted Music</a>
+<a class="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Product</a>
+<a class="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="px-4 py-2 text-sm font-bold bg-primary/20 hover:bg-primary/30 text-black dark:text-white rounded-lg transition-colors" href="index.html">Log in</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div>
+<h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-black dark:text-white">Create your account</h2>
+</div>
+<form action="#" class="mt-8 space-y-6" method="POST">
+<div class="rounded-md shadow-sm -space-y-px">
+<div>
+<label class="sr-only" for="email-address">Email address</label>
+<input autocomplete="email" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-primary/20 bg-background-light dark:bg-background-dark placeholder-black/50 dark:placeholder-white/50 text-black dark:text-white focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm rounded-t-lg" id="email-address" name="email" placeholder="Email address" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input autocomplete="new-password" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-primary/20 bg-background-light dark:bg-background-dark placeholder-black/50 dark:placeholder-white/50 text-black dark:text-white focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+<div>
+<label class="sr-only" for="confirm-password">Confirm Password</label>
+<input autocomplete="new-password" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-primary/20 bg-background-light dark:bg-background-dark placeholder-black/50 dark:placeholder-white/50 text-black dark:text-white focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm rounded-b-lg" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required="" type="password"/>
+</div>
+</div>
+<div>
+<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+                Sign up
+              </button>
+</div>
+</form>
+<div class="text-sm text-center">
+<a class="font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white underline" href="index.html"> Already have an account? Log in </a>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
