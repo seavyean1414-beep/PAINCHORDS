@@ -1,102 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<title>Pain Chords Login</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAIN CHORDS Welcome</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#7f13ec",
-            "background-light": "#f7f6f8",
-            "background-dark": "#191022",
-            "foreground-light": "#1c1c1c",
-            "foreground-dark": "#f7f6f8",
-            "muted-light": "#6b7280",
-            "muted-dark": "#9ca3af",
-            "input-light": "#ffffff",
-            "input-dark": "#2d203d",
-            "border-light": "#e5e7eb",
-            "border-dark": "#3c2d4d"
-          },
-          fontFamily: {
-            "display": ["Spline Sans", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              display: ["Spline Sans"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
           },
         },
-      },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
     }
-  </script>
-</head>
-<body class="font-display bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark">
-<div class="flex flex-col min-h-screen">
-<header class="w-full">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center py-6 border-b border-border-light dark:border-border-dark">
-<div class="flex items-center gap-3">
-<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-screen min-h-screen w-full flex-col justify-between overflow-hidden bg-gradient-to-b from-primary/30 to-background-light dark:from-primary/50 dark:to-background-dark">
+<div class="flex flex-1 flex-col items-center justify-center p-6 text-center">
+<div class="mb-8">
+<svg class="text-primary mx-auto" height="80" viewBox="0 0 256 256" width="80" xmlns="http://www.w3.org/2000/svg">
+<path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z" fill="currentColor"></path>
 </svg>
-<h1 class="text-xl font-bold">Pain Chords</h1>
 </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="NotedMusic.html">Noted Music</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Products</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
-</nav>
-<div class="flex items-center gap-4">
-<a class="bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 text-primary font-bold py-2 px-4 rounded-lg text-sm transition-colors" href="register.html">
-              Sign up
-            </a>
+<h1 class="text-4xl font-bold text-gray-800 dark:text-white">PAIN CHORDS</h1>
+<h2 class="mt-4 text-2xl font-semibold text-gray-700 dark:text-gray-300">Unleash Your Inner Rockstar</h2>
+<p class="mt-4 max-w-md text-base text-gray-600 dark:text-gray-400">Discover, create, and share your musical journey.</p>
 </div>
-</div>
-</div>
-</header>
-<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-<div class="w-full max-w-md space-y-8">
-<div>
-<h2 class="mt-6 text-center text-3xl font-bold tracking-tight">Log in to Pain Chords</h2>
-<p class="mt-2 text-center text-sm text-muted-light dark:text-muted-dark">
-            Or <a class="font-medium text-primary hover:text-primary/80" href="#">start your 14-day free trial</a>
-</p>
-</div>
-<form action="#" class="mt-8 space-y-6" method="POST">
-<div class="rounded-xl shadow-sm -space-y-px">
-<div>
-<label class="sr-only" for="email-address">Username or email</label>
-<input autocomplete="email" class="appearance-none rounded-t-lg relative block w-full px-3 py-4 border border-border-light dark:border-border-dark placeholder-muted-light dark:placeholder-muted-dark bg-input-light dark:bg-input-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="email-address" name="email" placeholder="Username or email" required="" type="email"/>
-</div>
-<div>
-<label class="sr-only" for="password">Password</label>
-<input autocomplete="current-password" class="appearance-none rounded-b-lg relative block w-full px-3 py-4 border border-border-light dark:border-border-dark placeholder-muted-light dark:placeholder-muted-dark bg-input-light dark:bg-input-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="Password" required="" type="password"/>
+<div class="w-full p-6">
+<div class="flex flex-col gap-4">
+<button class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold text-white transition-opacity hover:opacity-90">
+<a class="truncate" href="login.html">Login</a>
+</button>
+<button class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary/20 px-5 text-base font-bold text-primary transition-opacity hover:bg-primary/30 dark:bg-primary/30 dark:hover:bg-primary/40">
+<a class="truncate" href="register.html">Register</a>
+</button>
 </div>
 </div>
-<div class="flex items-center justify-between">
-<div class="text-sm">
-<a class="font-medium text-primary hover:text-primary/80" href="#">Forgot your password?</a>
-</div>
-</div>
-<div>
-<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
-              Log in
-            </button>
-</div>
-</form>
-<p class="text-center text-sm text-muted-light dark:text-muted-dark">
-            Don't have an account? <a class="font-medium text-primary hover:text-primary/80" href="register.html">Sign up</a>
-</p>
-</div>
-</main>
 </div>
 
 </body></html>
