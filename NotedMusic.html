@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAIN CHORDS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              display: ["Spline Sans"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .waveform-container {
+        position: relative;
+        width: 100%;
+        height: 40px; /* Adjust height as needed */
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.1); /* Placeholder for waveform */
+        border-radius: 0.25rem; /* Match card corner radius */
+      }
+      .waveform-bar {
+        position: absolute;
+        bottom: 0;
+        width: 2px; /* Adjust bar width as needed */
+        background-color: rgba(127, 19, 236, 0.5); /* Primary color */
+        animation: waveform 0.8s infinite linear alternate;
+      }
+      @keyframes waveform {
+        from { height: 10%; }
+        to { height: 90%; }
+      }
+      .song-card:hover .play-button {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .song-card:hover .waveform-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-black dark:text-white">
+<div class="flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-light/80 px-10 py-3 backdrop-blur-sm dark:bg-background-dark/80">
+<div class="flex items-center gap-4">
+<div class="h-6 w-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold">PAIN CHORDS</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-6">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary" href="#">Music</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Products</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Pricing</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-colors hover:bg-primary/90">
+<span>Get Started</span>
+</button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-background-light px-4 text-sm font-bold text-black ring-1 ring-primary/20 transition-colors hover:bg-primary/10 dark:bg-background-dark dark:text-white dark:hover:bg-primary/20" >
+<span >Log in</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10">
+<div class="w-full max-w-6xl px-4">
+<div class="mb-8 px-4">
+<div class="relative">
+<input class="w-full rounded-lg border-primary/20 bg-background-light py-3 pl-12 pr-4 text-base placeholder-black/50 focus:border-primary focus:ring-primary dark:bg-background-dark dark:placeholder-white/50" placeholder="Search by song, artist, or album..." type="text"/>
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 text-black/50 dark:text-white/50">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="mb-8 flex flex-wrap items-center gap-3 px-4">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 pl-4 pr-2 text-sm font-medium hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+<span>Genre</span>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 pl-4 pr-2 text-sm font-medium hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+<span>Instrument</span>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 pl-4 pr-2 text-sm font-medium hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30">
+<span>Difficulty</span>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</button>
+</div>
+<div class="mb-10">
+<h2 class="px-4 pb-4 pt-5 text-2xl font-bold">Featured</h2>
+<div class="relative">
+<div class="flex gap-6 overflow-x-auto px-4 pb-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div class="song-card group relative w-64 cursor-pointer">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCH8em5B_BNbJSJICrnrIIQoQyZa_AuhRWyhm99CLNflKvCE7sV_7KE6WMiyg5byVjEeZw1Gw_9V1QpyGt-9Z2Kz2AB5lsjLxErBLGmg432kHrg9oavF0yK-pq_uvdAHtCxhwmj1BM_00sgY2dkxRdsFRq-7i2cWW3fIMMBNKjPVmA8QSBl2RbugfrN4uig8i2kIkPy7aOqiZ5XT3-B7mUm1Utup8pRiC2U9tZHOsYCvS94ZbFIqMeK29Vkl0K7GeMn3niJc_OUiA");'></div>
+<div class="absolute bottom-2 left-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+<svg class="play-button h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 1</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 1</p>
+</div>
+</div>
+<div class="song-card group relative w-64 cursor-pointer">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSP-X8ki2oPtzQ0hYFoEHQAbuZ5G56ljDaTMfsW170kPdgb1VB9y8OSnmWiVwqBKHdx_mf5iE6Y8nbYudTrglezuBWrwMTvNSexJ55n4qB7xHnU6zEEXL16OyvXoPYN8cHD5lMCYLkKmm8f1kYb8DyQefwORgj1uRzzYYbDe53SSwsVYABu_WVaY3EDqsdycGPbiQ1FVLqG3rMXDqwcy3QKWpAe0iT_Rhgb16zwGlOE1VcIChSmiCVAC9iyWRliZ0iQDGVlTSQkg");'></div>
+<div class="absolute bottom-2 left-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+<svg class="play-button h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 2</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 2</p>
+</div>
+</div>
+<div class="song-card group relative w-64 cursor-pointer">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFWUl6sweFsOf6Oxmrw-RwACnK5Nff-Ss0Mj_e4btznIcQuSICBhZfvtE0m01kze094pYrek4kb9VYJMPxzO1HJo6Aj86hmYHeNUXfnmqn_XI-xsrxywGBxrZ_jtwwF2VxFEgEzsdVx8fwypBIJ5po7Vwvn9vtitjkr9r7A3S4f02OhXXfDfIlCNXVTJhkmRdwaxh2sUkBBwYxsJ4j3oPCGjfVAVRr921_Q9zlZjVPNBcbLMhrBqkJ4npoq0sgCyzYKRIDNe6fRw");'></div>
+<div class="absolute bottom-2 left-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+<svg class="play-button h-12 w-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 3</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="px-4 pb-4 pt-5 text-2xl font-bold">New Releases</h2>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6 p-4">
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWi-7SRK_prO0tUMECVJ_3d8LrV48W_LxL60DvFPPgDsgYM2u1aEUruWBl8_G08Gx16LK5kab5qTgmpjXlKw8pVOPYyHHYF8vWTaK6ZplioV_8esivlZb2nZRckh-S9nV67AMni8B9nF8jmE2Do-LhUG-1w7tMtVt7_JPwnTbzuS3-G8_KGbkydAI1_Lh5krPEiNteJMXV6BUtl44LCwzHV5ePnjqkjgE9FVgOm3ltCzVAT7eOyccyzvAaoq5T9GaSimubRRnqAQ");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 4</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 4</p>
+</div>
+</div>
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCakmlj-VLtElvsIWXfHIqhQC5phvAgcDo3vZODt2hIUzX6swOFFgat3ofnVUS9Dz_NSEw2cuC5bZYwmgh1ns6knuyWuxQVvFcK38SkRCGfcr9F980V_ctY9QRAhHMiEv3_fLezHRcPJwIQVE65gQGGM1Z1l834_02ewYdUH2ghk9rweq9UWjXS1mTrmWd72oJ-1HKOxMCdvJ810Hkob_c3H5m6PM1IZLiPsDZUS2x1o4l6baNw7PqWzVnLCC9QcC-oTnFY8BlI9A");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 5</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 5</p>
+</div>
+</div>
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKoD-HyfCx0aVeL7w1cCoPs5XD7CgVc4RHRtMrRJRXVqZwxGJx2W01zsdmjGVftEmygTaigPnsrw-hHpiZqPNaypRPTRdIhvgtJtr0ug1Tcito6oHqJVX4Ukoa_nA1qmP9GNoHE0UmBFeB6U_zsxFPi7KlSyM48hVvVi1nC_vQZ8zzfpgthQ7tGR5heRYASNmipWF1gO8Xvs0An6ca1_ysSey04QuacAUHhgGs6O9LBb2czr9aNHEP_egyH5YZ84HuQNsK4h4e-w");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 6</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 6</p>
+</div>
+</div>
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2UhNjqid9wMhyKuS3ebZ0PZT2kJcPp-Ju88TC7ZcXSO_NcOAgF7Stiv6EG_Bm1FClR7_44YqwptRQuj3AbwhCTYNGJ1TiXfYkQ_5K-2pLTMJpBqWg6_DTGOVLrxiCYG0LA6WU0V7BrbPgjaGjKoK-kA2_syUr4kEwrVqIPc-H69044cmzKdZ6mXfkAJUxXPrH0qv9dh1SQopXTp6aqcrnARlBFwNu9YVYhjmj-s0jaR6jH225FenjNKuknsOLieiaWy-bVJdPuA");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 7</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 7</p>
+</div>
+</div>
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJDXJQQ7OZhhVMXeTVUcoAd1YVWo3BmsTiPqq6t490s8xe_BW_I-mpmlaXBxeq0FR1Z2HfBzEpcOmfCk5sHOsewXa-MjVPDXd6YeBBcmnQQSIflRhg9pf8ffcWeqV2rrRnBzg07laSBADonb-KDS9gAVNIPWbKaFPhb6-KNxUIYfi4Hk1N-N8BTSgN__uoDGwRivqbj2_k7x2Nm33Y7AgrssZI4CcJwDNyCSkbZfogCrxArJo62gSM9exUQS69uISzOBpFnsMH8Q");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 8</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 8</p>
+</div>
+</div>
+<div class="song-card group relative">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-dxLKrGwsrtdX88Vq4zzi5kRqU-8D6a0SelVxjGzsaomfvKc213MhdkNrmirUTGEqwhAARkQFPgSXRNgIBcpn6i2fxSN-H0UE9A8u-167qVH_YK0NNjAPiWF16ShzRLz2bxV-ViTILBIR_fDZyKkQzeCmRy3fbSZw2Oba_d6hKvoLY8cxB32SmBiNhgPDt-JKRRdFVshlNBRFkWIBc58PiMSI2SGapblF1XNfeqmTo9mh-erica-Edd67qp3DpJw5yGHfJoD0bw");'></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+<svg class="play-button h-10 w-10 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<div class="mt-3 flex flex-col gap-1">
+<p class="text-base font-medium">Song Title 9</p>
+<p class="text-sm text-black/60 dark:text-white/60">Artist Name 9</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center p-4">
+<a class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<svg fill="currentColor" height="18" viewBox="0 0 256 256" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+</svg>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-sm font-bold dark:bg-primary/30" href="#">1</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-normal hover:bg-primary/10 dark:hover:bg-primary/20" href="#">2</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-normal hover:bg-primary/10 dark:hover:bg-primary/20" href="#">3</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-normal hover:bg-primary/10 dark:hover:bg-primary/20" href="#">4</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-normal hover:bg-primary/10 dark:hover:bg-primary/20" href="#">5</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<svg fill="currentColor" height="18" viewBox="0 0 256 256" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</a>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
